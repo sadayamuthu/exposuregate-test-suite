@@ -1,0 +1,2 @@
+litellm==1.83.6
+requests==2.33.0

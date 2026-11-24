@@ -1,0 +1,32 @@
+{
+  "id": "eg-policy-block-high",
+  "category": "policy",
+  "summary": "A HIGH-tier pin (pyyaml 5.3.1) with policy.HIGH: block. The stricter policy turns the default WARN into a BLOCK.",
+  "source": "exposuregate planted case requirements-high",
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pyyaml",
+        "version": "5.3.1",
+        "cve_id": "CVE-2020-14343",
+        "reason": "graded",
+        "action": "block"
+      }
+    ]
+  }
+}

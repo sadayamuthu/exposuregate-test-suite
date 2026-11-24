@@ -1,0 +1,27 @@
+{
+  "id": "eg-requirements-benign",
+  "category": "grading",
+  "summary": "requests 2.32.5 -> 2.33.0, the fixed version of CVE-2026-25645 (LOW); 2.33.0 has no advisories.",
+  "source": "exposuregate planted case requirements-benign",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [],
+    "exact_findings": true
+  }
+}

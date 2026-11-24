@@ -1,0 +1,485 @@
+[
+  {
+    "id": "eg-requirements-direct-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-requirements-transitive-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-requirements-high",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-requirements-low",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-requirements-benign",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-poetry-direct-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-poetry-transitive-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-poetry-high",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-poetry-low",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-poetry-benign",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-uv-direct-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-uv-transitive-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-uv-high",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-uv-low",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-uv-benign",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-npm-direct-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-npm-transitive-kev",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-npm-high",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-npm-low",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-npm-benign",
+    "category": "grading",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-requirements-stale-oebc",
+    "category": "stale-catalog",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-poetry-stale-oebc",
+    "category": "stale-catalog",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-uv-stale-oebc",
+    "category": "stale-catalog",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-uv-stale-oebc-direct",
+    "category": "stale-catalog",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-policy-transitive-cap",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-policy-block-high",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-suppression-active",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-suppression-expired",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-requirements-unpinned",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-unsupported-lockfile",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-exclusions",
+    "category": "policy",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-monorepo",
+    "category": "repo-shape",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-lockfile-added",
+    "category": "repo-shape",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-lockfile-deleted",
+    "category": "repo-shape",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-no-lockfile-change",
+    "category": "repo-shape",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-unchanged-vulnerable",
+    "category": "repo-shape",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-mode-full",
+    "category": "repo-shape",
+    "modes": [
+      "full"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-uv-workspace",
+    "category": "repo-shape",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "PASS",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-data-missing",
+    "category": "fail-closed",
+    "modes": [
+      "pr",
+      "pre-commit",
+      "refs"
+    ],
+    "verdict": "DENY",
+    "exit_code": 2
+  },
+  {
+    "id": "eg-data-stale",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "DENY",
+    "exit_code": 2
+  },
+  {
+    "id": "eg-data-future",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "DENY",
+    "exit_code": 2
+  },
+  {
+    "id": "eg-lockfile-unparseable",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "DENY",
+    "exit_code": 2
+  },
+  {
+    "id": "eg-npm-lockfile-v1",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "DENY",
+    "exit_code": 2
+  },
+  {
+    "id": "eg-fail-open",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "WARN",
+    "exit_code": 0
+  },
+  {
+    "id": "eg-fail-open-block",
+    "category": "fail-closed",
+    "modes": [
+      "pr"
+    ],
+    "verdict": "BLOCK",
+    "exit_code": 1
+  },
+  {
+    "id": "eg-config-unknown-key",
+    "category": "usage-error",
+    "modes": [
+      "pr"
+    ],
+    "verdict": null,
+    "exit_code": 2
+  },
+  {
+    "id": "eg-not-a-git-repo",
+    "category": "usage-error",
+    "modes": [
+      "pr"
+    ],
+    "verdict": null,
+    "exit_code": 2
+  }
+]

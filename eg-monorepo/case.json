@@ -1,0 +1,45 @@
+{
+  "id": "eg-monorepo",
+  "category": "repo-shape",
+  "summary": "Two services change in one pull request: a HIGH pin in a uv.lock and a KEV pin in a package-lock.json. Both are graded; the verdict is the worst.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pyyaml",
+        "version": "5.3.1",
+        "cve_id": "CVE-2020-14343",
+        "action": "warn",
+        "lockfile": "services/api/uv.lock"
+      },
+      {
+        "package": "vite",
+        "version": "6.2.3",
+        "cve_id": "CVE-2025-31125",
+        "action": "block",
+        "lockfile": "services/web/package-lock.json"
+      }
+    ],
+    "lockfiles": {
+      "services/api/uv.lock": "graded",
+      "services/web/package-lock.json": "graded"
+    }
+  }
+}

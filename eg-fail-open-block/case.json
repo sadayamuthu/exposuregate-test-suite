@@ -1,0 +1,33 @@
+{
+  "id": "eg-fail-open-block",
+  "category": "fail-closed",
+  "summary": "Stale data with --fail-open and a KEV pin: findings are still graded, so the KEV pin still blocks.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--fail-open"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [
+      "data_stale"
+    ],
+    "denials_enforced": false,
+    "findings": [
+      {
+        "package": "litellm",
+        "version": "1.83.6",
+        "cve_id": "CVE-2026-42208",
+        "action": "block"
+      }
+    ]
+  }
+}

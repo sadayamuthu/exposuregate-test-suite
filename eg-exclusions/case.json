@@ -1,0 +1,28 @@
+{
+  "id": "eg-exclusions",
+  "category": "policy",
+  "summary": "A KEV pin in examples/demo/requirements.txt, excluded with exclusions.paths: [examples/*]. The file is listed as excluded and nothing is graded.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [],
+    "exact_findings": true,
+    "lockfiles": {
+      "examples/demo/requirements.txt": "excluded"
+    }
+  }
+}

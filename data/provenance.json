@@ -1,0 +1,46 @@
+{
+  "archive_day": "2026-11-13",
+  "oebc": {
+    "generated_at_utc": "2026-06-14T10:07:48Z",
+    "sha256": "9e8aa662e0b03064906e470f4645d4dcc502957b02ae75c3910d6f626041a187",
+    "records": 191
+  },
+  "osv": {
+    "PyPI": {
+      "sha256": "7189dfff193f1278b4a172f44c08c78f06f7900769d575b03a89a9ced9b5c8c2",
+      "as_of": "2026-11-13T18:15:07.541730589Z",
+      "records": 457
+    },
+    "npm": {
+      "sha256": "ab2f6c95df7f70147aa81a167f85937a439b65b5ddf62a98206a60dd919604ec",
+      "as_of": "2026-11-13T19:30:05.300576778Z",
+      "records": 68
+    }
+  },
+  "packages": [
+    "PyPI:brotli",
+    "PyPI:click",
+    "PyPI:fastapi",
+    "PyPI:langflow",
+    "PyPI:litellm",
+    "PyPI:matplotlib",
+    "PyPI:pillow",
+    "PyPI:pydantic",
+    "PyPI:pyyaml",
+    "PyPI:requests",
+    "PyPI:starlette",
+    "npm:express",
+    "npm:jquery",
+    "npm:jquery-ui",
+    "npm:lodash",
+    "npm:minimist",
+    "npm:ms",
+    "npm:vite"
+  ],
+  "scan_args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ]
+}

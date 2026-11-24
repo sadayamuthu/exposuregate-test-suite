@@ -1,0 +1,23 @@
+{
+  "id": "eg-data-stale",
+  "category": "fail-closed",
+  "summary": "Frozen data with the default 7-day limit: OEBC (built 2026-06-14) is 152 days old on 2026-11-13, so the scan is denied.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13"
+  ],
+  "expect": {
+    "verdict": "DENY",
+    "exit_code": 2,
+    "denials": [
+      "data_stale"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "eg-not-a-git-repo",
+  "category": "usage-error",
+  "summary": "A pull-request scan in a directory that is not a git repository (exit 2, no report).",
+  "source": null,
+  "git": false,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": null,
+    "exit_code": 2
+  }
+}

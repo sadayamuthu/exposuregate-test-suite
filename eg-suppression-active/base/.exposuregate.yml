@@ -1,0 +1,5 @@
+suppressions:
+  - id: CVE-2020-14343
+    package: pyyaml
+    reason: "test suite: only safe_load is called"
+    expires: 2099-12-31

@@ -1,0 +1,22 @@
+{
+  "id": "eg-no-lockfile-change",
+  "category": "repo-shape",
+  "summary": "The change edits only app.py, and there is no data at all. A change that touches no lockfile needs no data and passes quickly.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "empty",
+  "args": [],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [],
+    "exact_findings": true
+  }
+}

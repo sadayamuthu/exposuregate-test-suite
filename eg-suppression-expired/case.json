@@ -1,0 +1,37 @@
+{
+  "id": "eg-suppression-expired",
+  "category": "policy",
+  "summary": "The same suppression, expired on 2026-01-01 (the scan runs as of 2026-11-13). It no longer applies, and the expiry is itself reported.",
+  "source": "exposuregate planted case requirements-high",
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pyyaml",
+        "version": "5.3.1",
+        "cve_id": "CVE-2020-14343",
+        "action": "warn",
+        "suppressed": false
+      },
+      {
+        "reason": "suppression_expired",
+        "action": "warn"
+      }
+    ],
+    "expired_suppressions": 1
+  }
+}

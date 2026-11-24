@@ -1,0 +1,30 @@
+{
+  "id": "eg-requirements-unpinned",
+  "category": "policy",
+  "summary": "A requirements line with a range (requests>=2.0) instead of an == pin. It can't be graded, so it warns (policy.unpinned).",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "requests",
+        "reason": "unpinned",
+        "action": "warn"
+      }
+    ]
+  }
+}

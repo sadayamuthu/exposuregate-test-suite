@@ -1,0 +1,36 @@
+{
+  "id": "eg-requirements-transitive-kev",
+  "category": "grading",
+  "summary": "starlette (via fastapi) has no CRITICAL CVE in the frozen OEBC: its only KEV CVE, CVE-2026-48710, was KEV-listed 2026-09-02, after the 2026-06-14 OEBC build, which grades it LOW (see the stale-starlette case). pillow via matplotlib is used instead: pillow 10.0.0 is the last release before the fix (10.0.1) for KEV-listed CVE-2023-4863 (libwebp, CRITICAL); matplotlib 3.8.0 has no advisories.",
+  "source": "exposuregate planted case requirements-transitive-kev",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pillow",
+        "version": "10.0.0",
+        "cve_id": "CVE-2023-4863",
+        "reason": "graded",
+        "dependency": "transitive",
+        "action": "block"
+      }
+    ],
+    "exact_findings": false
+  }
+}

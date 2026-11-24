@@ -1,0 +1,47 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz", hash = "sha256:9324f66c97541243f6596cbcee1298c5a4e1212cd0f8a9592e3e5e8398c21cb6" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/c/click/click-8.1.7-py3-none-any.whl", hash = "sha256:c67448208749f8c9348be08f14f4dd24c3fc7597047e89ea0c9e119264e2c2c3" },
+]
+
+[[package]]
+name = "fastapi"
+version = "0.115.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "starlette" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/source/f/fastapi/fastapi-0.115.6.tar.gz", hash = "sha256:093c3ad2b0a32d14446c3c0fbdd190cbab4c2d657359087cf61954629e66b2d7" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/f/fastapi/fastapi-0.115.6-py3-none-any.whl", hash = "sha256:20e54ecc23327676cf7aedf8946eb1521b4ed5b7520d76a0d2472644081a8abf" },
+]
+
+[[package]]
+name = "planted-app"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "click" },
+    { name = "fastapi" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "fastapi", specifier = ">=0.115.6" },
+]
+
+[[package]]
+name = "starlette"
+version = "0.41.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/s/starlette/starlette-0.41.3.tar.gz", hash = "sha256:37aa0e1d20cdb83422798ed119657c22cea44f8cf7f2af580053a956e24963cf" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/s/starlette/starlette-0.41.3-py3-none-any.whl", hash = "sha256:2b038a8178b3690f89878f79691e679ab178765f1290c1f9368f3b0cacc57a5e" },
+]

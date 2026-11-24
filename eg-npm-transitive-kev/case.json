@@ -1,0 +1,44 @@
+{
+  "id": "eg-npm-transitive-kev",
+  "category": "grading",
+  "summary": "jquery 3.4.1 nested under jquery-ui 1.13.2 (no advisories): last release before the fix (3.5.0) for KEV-listed CVE-2020-11023 (CRITICAL).",
+  "source": "exposuregate planted case npm-transitive-kev",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [],
+    "findings": [
+      {
+        "package": "jquery",
+        "version": "3.4.1",
+        "cve_id": "CVE-2020-11023",
+        "reason": "graded",
+        "dependency": "transitive",
+        "action": "block"
+      },
+      {
+        "package": "jquery",
+        "version": "3.4.1",
+        "cve_id": "CVE-2020-11022",
+        "reason": "graded",
+        "dependency": "transitive",
+        "action": "pass"
+      }
+    ],
+    "exact_findings": false
+  }
+}

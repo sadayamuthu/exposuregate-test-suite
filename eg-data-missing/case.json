@@ -1,0 +1,22 @@
+{
+  "id": "eg-data-missing",
+  "category": "fail-closed",
+  "summary": "A lockfile changes but there is no data directory index. The gate denies instead of passing.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "empty",
+  "args": [],
+  "expect": {
+    "verdict": "DENY",
+    "exit_code": 2,
+    "denials": [
+      "data_missing"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "eg-lockfile-deleted",
+  "category": "repo-shape",
+  "summary": "The change deletes a lockfile that pins a KEV version. Removing a dependency adds nothing, so it passes.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [
+    "requirements.txt"
+  ],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [],
+    "exact_findings": true
+  }
+}

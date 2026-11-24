@@ -1,0 +1,33 @@
+{
+  "id": "eg-policy-transitive-cap",
+  "category": "policy",
+  "summary": "A transitive KEV pin (pillow 10.0.0 via matplotlib) with policy.transitive_max_action: warn. The cap turns the BLOCK into a WARN.",
+  "source": "exposuregate planted case uv-transitive-kev",
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pillow",
+        "version": "10.0.0",
+        "cve_id": "CVE-2023-4863",
+        "dependency": "transitive",
+        "base_action": "block",
+        "action": "warn"
+      }
+    ]
+  }
+}

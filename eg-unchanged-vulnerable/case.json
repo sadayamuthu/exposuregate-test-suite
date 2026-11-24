@@ -1,0 +1,27 @@
+{
+  "id": "eg-unchanged-vulnerable",
+  "category": "repo-shape",
+  "summary": "main already pins a KEV version (litellm 1.83.6); the change only bumps requests to a fixed version. The gate grades what a change adds, so it passes.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [],
+    "exact_findings": true
+  }
+}

@@ -1,0 +1,47 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz", hash = "sha256:9324f66c97541243f6596cbcee1298c5a4e1212cd0f8a9592e3e5e8398c21cb6" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/c/click/click-8.1.7-py3-none-any.whl", hash = "sha256:c67448208749f8c9348be08f14f4dd24c3fc7597047e89ea0c9e119264e2c2c3" },
+]
+
+[[package]]
+name = "matplotlib"
+version = "3.8.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/source/m/matplotlib/matplotlib-3.8.0.tar.gz", hash = "sha256:29874c475e0498d6653c21b581a5c08d8d25a65229e09e46b8f538f6b75c9e6a" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/m/matplotlib/matplotlib-3.8.0-py3-none-any.whl", hash = "sha256:afcb4d2faf6ed084025ea8f0f063169b8d0b43c01858a0cabbe836f04e88cf89" },
+]
+
+[[package]]
+name = "pillow"
+version = "10.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/p/pillow/pillow-10.0.0.tar.gz", hash = "sha256:5af6718f22e188fbb8143b9f93cd6b699f789afc26cbde33e684c188b16bf880" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/p/pillow/pillow-10.0.0-py3-none-any.whl", hash = "sha256:ceb794750323fd5dde59801ef5f27b7c6ed57f219f4dc5480c3303a4876615d9" },
+]
+
+[[package]]
+name = "planted-app"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "click" },
+    { name = "matplotlib" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "matplotlib", specifier = ">=3.8.0" },
+]

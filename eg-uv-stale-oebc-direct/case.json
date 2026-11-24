@@ -1,0 +1,44 @@
+{
+  "id": "eg-uv-stale-oebc-direct",
+  "category": "stale-catalog",
+  "summary": "Documents OEBC staleness: CVE-2026-111497 was KEV-listed 2026-10-27, after the 2026-06-14 OEBC build, so it is not_in_oebc (warn) instead of CRITICAL (block).",
+  "source": "exposuregate planted case uv-stale-brotli",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "brotli",
+        "version": "1.1.0",
+        "cve_id": "CVE-2026-111497",
+        "reason": "not_in_oebc",
+        "dependency": "direct",
+        "action": "warn"
+      },
+      {
+        "package": "brotli",
+        "version": "1.1.0",
+        "cve_id": "CVE-2025-6176",
+        "reason": "graded",
+        "dependency": "direct",
+        "action": "pass"
+      }
+    ],
+    "exact_findings": false
+  }
+}

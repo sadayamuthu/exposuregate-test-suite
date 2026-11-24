@@ -1,0 +1,35 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "brotli"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/b/brotli/brotli-1.1.0.tar.gz", hash = "sha256:d0671fb8417ef46098cdafcc79de9b07a54bfdbb6f794f99b00c8218669d590f" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/b/brotli/brotli-1.1.0-py3-none-any.whl", hash = "sha256:0f1b8f14e0daa4f9354503ca49f467750c19a4626e4d2069709e1c8521db4c87" },
+]
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz", hash = "sha256:9324f66c97541243f6596cbcee1298c5a4e1212cd0f8a9592e3e5e8398c21cb6" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/c/click/click-8.1.7-py3-none-any.whl", hash = "sha256:c67448208749f8c9348be08f14f4dd24c3fc7597047e89ea0c9e119264e2c2c3" },
+]
+
+[[package]]
+name = "planted-app"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "brotli" },
+    { name = "click" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "brotli", specifier = ">=1.1.0" },
+    { name = "click", specifier = ">=8.1.7" },
+]

@@ -1,0 +1,33 @@
+{
+  "id": "eg-lockfile-added",
+  "category": "repo-shape",
+  "summary": "The change adds the project's first lockfile, which pins a KEV version. Every pin in a new lockfile counts as added.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "BLOCK",
+    "exit_code": 1,
+    "denials": [],
+    "findings": [
+      {
+        "package": "litellm",
+        "version": "1.83.6",
+        "cve_id": "CVE-2026-42208",
+        "action": "block"
+      }
+    ]
+  }
+}

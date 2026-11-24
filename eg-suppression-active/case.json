@@ -1,0 +1,34 @@
+{
+  "id": "eg-suppression-active",
+  "category": "policy",
+  "summary": "The HIGH finding for pyyaml 5.3.1 is suppressed with a reason and an expiry in the future. The finding is still reported, with action pass.",
+  "source": "exposuregate planted case requirements-high",
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pyyaml",
+        "version": "5.3.1",
+        "cve_id": "CVE-2020-14343",
+        "base_action": "warn",
+        "action": "pass",
+        "suppressed": true
+      }
+    ],
+    "expired_suppressions": 0
+  }
+}

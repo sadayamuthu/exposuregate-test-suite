@@ -1,0 +1,25 @@
+{
+  "id": "eg-fail-open",
+  "category": "fail-closed",
+  "summary": "Stale data with --fail-open: the denial is reported with enforced: false, and the verdict is WARN, never PASS, even for a benign bump.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--fail-open"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [
+      "data_stale"
+    ],
+    "denials_enforced": false
+  }
+}

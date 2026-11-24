@@ -1,0 +1,36 @@
+{
+  "id": "eg-poetry-high",
+  "category": "grading",
+  "summary": "pyyaml 5.3.1: highest final release whose only finding is HIGH (CVE-2020-14343).",
+  "source": "exposuregate planted case poetry-high",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "pyyaml",
+        "version": "5.3.1",
+        "cve_id": "CVE-2020-14343",
+        "reason": "graded",
+        "dependency": "direct",
+        "action": "warn"
+      }
+    ],
+    "exact_findings": false
+  }
+}

@@ -1,0 +1,81 @@
+name: suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cli:
+    name: CLI, every project and mode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet exposuregate==0.1.0
+      - run: python test_runner.py --json results.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: results.json
+
+  action:
+    name: GitHub Action, ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - eg-requirements-direct-kev
+          - eg-npm-high
+          - eg-uv-benign
+          - eg-policy-transitive-cap
+          - eg-monorepo
+          - eg-data-stale
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build the project's repository (main + change branch)
+        id: repo
+        run: |
+          set -euo pipefail
+          dir="$RUNNER_TEMP/repo"
+          spec=$(python test_runner.py --materialize "${{ matrix.project }}" "$dir")
+          args="--oebc $GITHUB_WORKSPACE/data/oebc.json --osv-dir $GITHUB_WORKSPACE/data/osv"
+          args="$args $(python -c 'import json,sys; print(" ".join(json.loads(sys.argv[1])["args"]))' "$spec")"
+          {
+            echo "dir=$dir"
+            echo "args=$args"
+            echo "verdict=$(python -c 'import json,sys; print(json.loads(sys.argv[1])["verdict"])' "$spec")"
+            echo "exit-code=$(python -c 'import json,sys; print(json.loads(sys.argv[1])["exit_code"])' "$spec")"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: ExposureGate action
+        id: eg
+        continue-on-error: true
+        uses: sadayamuthu/exposuregate@v0.1.0
+        with:
+          working-directory: ${{ steps.repo.outputs.dir }}
+          target-branch: main
+          update-data: 'false'
+          args: ${{ steps.repo.outputs.args }}
+
+      - name: Check the verdict and exit code
+        env:
+          GOT_VERDICT: ${{ steps.eg.outputs.verdict }}
+          GOT_EXIT: ${{ steps.eg.outputs.exit-code }}
+          WANT_VERDICT: ${{ steps.repo.outputs.verdict }}
+          WANT_EXIT: ${{ steps.repo.outputs.exit-code }}
+        run: |
+          echo "verdict $GOT_VERDICT (expected $WANT_VERDICT), exit $GOT_EXIT (expected $WANT_EXIT)"
+          [ "$GOT_VERDICT" = "$WANT_VERDICT" ] && [ "$GOT_EXIT" = "$WANT_EXIT" ]

@@ -1,0 +1,35 @@
+version = 1
+requires-python = ">=3.10"
+
+[[package]]
+name = "click"
+version = "8.1.7"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz", hash = "sha256:9324f66c97541243f6596cbcee1298c5a4e1212cd0f8a9592e3e5e8398c21cb6" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/c/click/click-8.1.7-py3-none-any.whl", hash = "sha256:c67448208749f8c9348be08f14f4dd24c3fc7597047e89ea0c9e119264e2c2c3" },
+]
+
+[[package]]
+name = "planted-app"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "click" },
+    { name = "requests" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "click", specifier = ">=8.1.7" },
+    { name = "requests", specifier = ">=2.33.0" },
+]
+
+[[package]]
+name = "requests"
+version = "2.33.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/source/r/requests/requests-2.33.0.tar.gz", hash = "sha256:7c945abd05fe6f948aa308cb6ba82fbd4ed540089ec12992d04c4b5a5885c1ed" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/py3/r/requests/requests-2.33.0-py3-none-any.whl", hash = "sha256:75ac7373c55e83b7213b7b2c2a97c74775750979dcca3a56bf642a40e1ca7da4" },
+]

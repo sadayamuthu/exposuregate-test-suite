@@ -1,0 +1,25 @@
+{
+  "id": "eg-lockfile-unparseable",
+  "category": "fail-closed",
+  "summary": "The change leaves package-lock.json as truncated JSON. A lockfile that won't parse is denied, not skipped.",
+  "source": null,
+  "git": true,
+  "modes": [
+    "pr"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "DENY",
+    "exit_code": 2,
+    "denials": [
+      "lockfile_parse"
+    ]
+  }
+}

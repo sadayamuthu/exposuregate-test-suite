@@ -1,0 +1,12 @@
+[project]
+name = "planted-app"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.7",
+    "langflow>=1.8.4",
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"

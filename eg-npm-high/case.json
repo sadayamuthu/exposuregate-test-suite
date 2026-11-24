@@ -1,0 +1,36 @@
+{
+  "id": "eg-npm-high",
+  "category": "grading",
+  "summary": "minimist 1.2.5: last release before the fix (1.2.6) for CVE-2021-44906, its only finding (HIGH).",
+  "source": "exposuregate planted case npm-high",
+  "git": true,
+  "modes": [
+    "pr",
+    "pre-commit",
+    "refs"
+  ],
+  "delete": [],
+  "data": "frozen",
+  "args": [
+    "--as-of",
+    "2026-11-13",
+    "--max-age-days",
+    "200"
+  ],
+  "expect": {
+    "verdict": "WARN",
+    "exit_code": 0,
+    "denials": [],
+    "findings": [
+      {
+        "package": "minimist",
+        "version": "1.2.5",
+        "cve_id": "CVE-2021-44906",
+        "reason": "graded",
+        "dependency": "direct",
+        "action": "warn"
+      }
+    ],
+    "exact_findings": false
+  }
+}

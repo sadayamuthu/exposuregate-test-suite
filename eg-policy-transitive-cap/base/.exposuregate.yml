@@ -1,0 +1,2 @@
+policy:
+  transitive_max_action: warn
