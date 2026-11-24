@@ -170,11 +170,21 @@ def run_one(case: dict[str, Any], mode: str, exe: str) -> dict[str, Any]:
         except json.JSONDecodeError:
             report = None
         errs = check(case, proc.returncode, report)
+        keep = ("lockfile", "package", "version", "dependency", "reason", "cve_id",
+                "exposure_tier", "base_action", "action")
         return {
-            "id": case["id"], "mode": mode, "ok": not errs, "errors": errs,
-            "exit_code": proc.returncode, "verdict": report["verdict"] if report else None,
+            "id": case["id"], "category": case["category"], "mode": mode, "ok": not errs,
+            "errors": errs, "exit_code": proc.returncode,
+            "verdict": report["verdict"] if report else None,
             "expected": case["expect"]["verdict"],
             "stderr": proc.stderr.strip().splitlines()[-3:] if errs else [],
+            "report": None if report is None else {
+                "summary": report["summary"],
+                "timing_ms": report["timing_ms"],
+                "denials": report["denials"],
+                "lockfiles": report["lockfiles"],
+                "findings": [{k: f.get(k) for k in keep} for f in report["findings"]],
+            },
         }
 
 
