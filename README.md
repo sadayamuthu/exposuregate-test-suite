@@ -111,8 +111,12 @@ lockfiles or ExposureGate's parser fixtures. `scripts/scaffold.py` regenerates e
 make scaffold EG_SRC=../exposuregate    # checkout at v0.1.0
 ```
 
-Expected results are written in `scripts/scaffold.py` from ExposureGate's documented behaviour,
-not copied from its output. A failing case is a finding about the tool or the case.
+Expected results for the 24 grading and stale-catalog projects are taken from the planted set's
+`cases.json` (verdict, exit code and the findings it names), which ExposureGate's own unit tests
+also check. The other 23 projects' expectations are written in `scripts/scaffold.py` from
+ExposureGate's documented behaviour. Findings are checked as a subset (the findings a case names
+must be present) unless the case sets `exact_findings`. A failing case is a finding about the
+tool or the case.
 
 Each grading case's reason (why that version, which CVE) is in its `case.json` `summary` and
 `README.md`. The planted versions are real releases with real advisories: don't install them.
